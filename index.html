@@ -53,6 +53,9 @@
 First, please enable Trocker in incognito/private mode and repeat your test there. In incognito/private mode only extensions you specifically approve can run so if the issue persists it confirms that the issue is not due to interference from other extensions (we have indeed observed that certain other extensions (which were ironically email tracking extensions) spy on their own customers and enable trackers behind the scenes).<br />
 Second, some tracking images cannot be easily blocked because they don't have any size information that would enable Trocker to guess that they are trackers before they are loaded. Maybe you had one of those. In this case, we can add the url of the tracker to our black list if it is not already there. Please consider forwarding the email in question to us at <a href="mailto:trockerapp@gmail.com">trockerapp@gmail.com</a> (after removing any personal information) so that we can do that. 
 </li>
+<li><em>Why does Trocker require permission to "Access your data for all websites"?</em><br />
+In order to be able to block a tracking image, the browser should tell Trocker before loading that image. Technically, for this to happen for all potential tracking images <em>from any url</em>, Trocker requries a permission called <a href="https://developers.chrome.com/extensions/match_patterns">&lt;all_urls&gt</a>, otherwise only a specific set of tracking urls will be blockable. This is a powerful permission in general so browsers rightfully describe it as "Access your data for all websites". Without this permission, blocking of email trackers will be limited to a few webmails or to a specific predetermined list of trackers. For more info about the technical details, see <a href="https://github.com/trockerapp/trocker/issues/3#issuecomment-482911237">this issue</a> on GitHub. 
+</li>
 </ul>
 
 
